@@ -13,7 +13,7 @@ def upload_notebook(notebook: Path, enable_annotations: bool, enable_discovery: 
     """
     upload_url = f"{nbss_url.rstrip('/')}/api/v1/notebook"
     with open(notebook, 'rb') as f:
-        print(requests.post(
+        return requests.post(
             upload_url,
             data={
                 'enable-annotations': enable_annotations,
@@ -23,7 +23,7 @@ def upload_notebook(notebook: Path, enable_annotations: bool, enable_discovery: 
                 'notebook': f,
 
             }
-        ).text)
+        ).text.strip()
 
 def main():
     argparser = argparse.ArgumentParser(
@@ -56,7 +56,7 @@ def main():
         print(f'File {args.notebook} does not exist, can not upload', file=sys.stderr)
         sys.exit(1)
 
-    upload_notebook(args.notebook, args.enable_annotations, args.enable_discovery, args.nbss_url)
+    print(upload_notebook(args.notebook, args.enable_annotations, args.enable_discovery, args.nbss_url))
 
 if __name__ == '__main__':
     main()
