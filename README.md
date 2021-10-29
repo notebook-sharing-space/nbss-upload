@@ -32,3 +32,13 @@ or `-d`.
 
 All notebook formats supported by notebooksharing.space - `.ipynb`, `.rmd`, `.html`
 are supported.
+
+### Uploading from inside a Jupyter Notebook
+
+You can add a cell to your Jupyter Notebook that calls `nbss-upload`, and each
+time you execute the cell (after saving your notebook), it will be uploaded and the
+URL printed.
+
+```
+!nbss-upload <name-of-notebook>
+```
