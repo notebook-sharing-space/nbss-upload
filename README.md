@@ -27,7 +27,7 @@ not be visible to search engines. Annotations will also be turned off by default
 help fight abuse.
 
 You can enable annotations via `hypothes.is` by passing `--enable-annotations` or `-a`.
-The notebook can be made discoverable to search engines by passing `--enable-discvery`
+The notebook can be made discoverable to search engines by passing `--enable-discovery`
 or `-d`.
 
 All notebook formats supported by notebooksharing.space - `.ipynb`, `.rmd`, `.html`
